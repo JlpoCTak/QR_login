@@ -5,13 +5,15 @@ import json
 
 
 class Worker:
-    def __init__(self, id_worker, first_name, patronymic, last_name, age, profession):
+    def __init__(self, id_worker, tg_id, first_name, patronymic, last_name, age, profession):
         self.id_worker = id_worker
+        self.tg_id = tg_id
         self.first_name = first_name
         self.patronymic = patronymic
         self.last_name = last_name
         self.age = age
         self.profession = profession
+
 
     def generate_qr(self):
         data_worker = (f'{self.id_worker};{self.first_name};'
@@ -29,7 +31,7 @@ def read_qr():
     return data
 
 
-worker1 = Worker(1, 'Igor', 'Kopylov', 'Igorevich',
+worker1 = Worker(1, '657529187', 'Igor', 'Kopylov', 'Igorevich',
                  18, 'programmer')
 
 worker1.generate_qr()
